@@ -4,8 +4,7 @@
     "description": "",
     "main": "server.js",
     "scripts": {
-        "dev": "npx nodemon server.js",
-        "prod": "cd .. && cd .\frontend && npm start"
+        "dev": "npx nodemon server.js"
     },
     "author": "Gergo Nagy",
     "license": "MIT",
