@@ -111,6 +111,15 @@ export default function NumberButtons(props) {
                 <button
                     className="btn btn-dark m-1"
                     style={{ fontSize: "1.8em", padding: "1.05em 0.62em" }}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        if (display !== "0")
+                            setDisplay(
+                                Number(display) > 0
+                                    ? "-" + display
+                                    : display.substring(1)
+                            );
+                    }}
                 >
                     <b>+/-</b>
                 </button>
@@ -129,7 +138,8 @@ export default function NumberButtons(props) {
                     style={{ fontSize: "4.3em", padding: "0em 0.48em" }}
                     onClick={(e) => {
                         e.preventDefault();
-                        if (!display.includes('.') && display.length !== 9) handleNumberClick(".");
+                        if (!display.includes(".") && display.length !== 9)
+                            handleNumberClick(".");
                     }}
                 >
                     .
