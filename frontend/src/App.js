@@ -18,15 +18,23 @@ export default function App() {
      * @returns {Number or CalculationError}
      */
     const solve = (fst, snd, op) => {
+        let result;
         switch (op) {
             case "/":
-                return (fst / snd).toString();
+                if (parseInt(snd) === 0) {
+                    return "Cannot divide by zero!";
+                }
+                result = Number(Number(fst) / Number(snd)).toFixed(2).toString();
+                return result.length > 9 ? "Cannot display!" : result;
             case "x":
-                return (fst * snd).toString();
+                result = Number(Number(fst) * Number(snd)).toFixed(2).toString();
+                return result.length > 9 ? "Cannot display!" : result;
             case "-":
-                return (fst - snd).toString();
+                result = Number(Number(fst) - Number(snd)).toFixed(2).toString();
+                return result.length > 9 ? "Cannot display!" : result;
             case "+":
-                return (fst + snd).toString();
+                result = Number(Number(fst) + Number(snd)).toFixed(2).toString();
+                return result.length > 9 ? "Cannot display!" : result;
             default:
                 return "Error";
         }
