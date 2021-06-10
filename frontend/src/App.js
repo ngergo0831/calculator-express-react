@@ -71,7 +71,6 @@ export default function App() {
     useEffect(() => {
         if (!alert) {
             setTimeout(() => setAlert(true), 3000);
-            console.log("asd");
         }
     }, [alert, setAlert]);
 
